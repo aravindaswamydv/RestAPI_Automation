@@ -12,10 +12,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.qa.base.TestBase;
 import com.qa.client.RestCleint;
 import com.qa.utils.TestUtil;
-
-import qa.com.base.TestBase;
 
 public class GetAPITest extends TestBase {
 TestBase testBase;

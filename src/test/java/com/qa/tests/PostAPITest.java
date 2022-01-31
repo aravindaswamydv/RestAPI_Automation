@@ -14,10 +14,9 @@ import org.testng.annotations.Test;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qa.base.TestBase;
 import com.qa.client.RestCleint;
 import com.qa.data.Users;
-
-import qa.com.base.TestBase;
 
 public class PostAPITest extends TestBase{
 	

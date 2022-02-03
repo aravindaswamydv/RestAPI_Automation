@@ -45,7 +45,7 @@ public class RestCleint {
 
 	}
 	
-	//3. GET Method with Headers
+	//3. POST Method with Headers
 		public CloseableHttpResponse post(String url, String entityString,HashMap<String,String> headerMap) throws ClientProtocolException, IOException  {
 			CloseableHttpClient httpClient =  HttpClients.createDefault();
 			HttpPost httpPost = new HttpPost(url); // http POST request

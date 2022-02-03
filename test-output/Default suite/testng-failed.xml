@@ -5,8 +5,8 @@
     <classes>
       <class name="com.qa.tests.GetAPITest">
         <methods>
-          <include name="getAPITestWithoutHeaders"/>
           <include name="setUp"/>
+          <include name="getAPITestWithHeaders1"/>
         </methods>
       </class>
     </classes>

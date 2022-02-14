@@ -149,8 +149,8 @@ public void getAPITestWithHeaders1() throws ClientProtocolException, IOException
 	headerMap.put("Content-Type","application/json");
 	/*headerMap.put("username","testuser");
 	headerMap.put("password","test1234");
-	headerMap.put("Auth Token","12345");*/
-	
+	headerMap.put("Auth Token","12345");
+	*/
 	closeableHttpResponse=restClient.get(url,headerMap);
 	
 	// a. Status Code:
@@ -176,63 +176,30 @@ public void getAPITestWithHeaders1() throws ClientProtocolException, IOException
 	System.out.println("data : " + usersJsonArrayString);
 	
 	JSONArray jsonArray = responseJson.getJSONArray("data");
+	JSONArray sortedJonArray;
 	
 	// Storing the values of Jason Array in a csv file
-	String filePath=TestUtil.writeJsonArrayToCSV("MyUsers2.csv", jsonArray);
+	String targetCSVFilePath=TestUtil.writeJsonArrayToCSV("MyUsers2.csv", jsonArray);
 	
-	System.out.println("Data has been Sucessfully Written to "+ filePath);
+	System.out.println("Data has been Sucessfully Written to "+ targetCSVFilePath);
 	
+	sortedJonArray=TestUtil.sortJasonArray(usersJsonArrayString, "last_name", "ASCENDING");
 	
+	targetCSVFilePath=TestUtil.writeJsonArrayToCSV("MyUsers3.csv", sortedJonArray);
 	
-	filePath=TestUtil.writeJsonArrayToCSV("MyUsers3.csv", sortJasonArray(usersJsonArrayString));
-	
-	System.out.println("Data has been Sucessfully Written to "+ filePath);
-	
-	
+	System.out.println("Data has been Sucessfully Written to "+ targetCSVFilePath);
 	
 	
+	String sourceCSVFilePath = System.getProperty("user.dir")+"\\MyUsers2.csv";
+	
+	String resultCSVFilePath = TestUtil.createCSV("MyUsers4.csv");
+	
+	int differences = TestUtil.compareCSV(sourceCSVFilePath, targetCSVFilePath, resultCSVFilePath);
+	
+	Assert.assertTrue(differences<=0, "Differences found : " + differences);
 	
 	
-//	ArrayList<Object> usersList = new ArrayList<Object>();
 	
-	/*if(jsonArray!=null) {
-		
-
-	
-	for (int i = 0; i < jsonArray.length(); i++) {
-		usersList.add(jsonArray.getJSONObject(i));
-	}
-	}
-	
-	System.out.println("Users in the List : ");
-	for (int i = 0; i < usersList.size(); i++) {
-		System.out.println(usersList.get(i));
-	}
-	
-	Collections.sort(usersList);
-	*/
-
-	
-	// get the value from JSON ARRAY
-	
-	/*String lastName=TestUtil.getValuesByJPath(responseJson, "/data[0]/last_name");
-	String id=TestUtil.getValuesByJPath(responseJson, "/data[0]/id");
-	String avatar=TestUtil.getValuesByJPath(responseJson, "/data[0]/avatar");
-	String firstName=TestUtil.getValuesByJPath(responseJson, "/data[0]/first_name");
-	
-	System.out.println(lastName);
-	System.out.println(id);
-	System.out.println(avatar);
-	System.out.println(firstName);
-	
-	// c. All Headers:
-	Header[] headerArry = closeableHttpResponse.getAllHeaders();
-	HashMap<String,String> allHeaders = new HashMap<String,String>();
-	
-	for(Header header:headerArry) {
-		allHeaders.put(header.getName(), header.getValue());
-	}
-	System.out.print("Headers Array -- " + allHeaders); */
 }
 
 public JSONArray sortJasonArray(String users) {

@@ -44,8 +44,10 @@ public static void main(String args[]) throws FileNotFoundException, IOException
     }
      CSVFile2.close();
 
+     int i=0;
      for(String bs:al2)
      {
+    	 System.out.println(al2.get(i++));
          al1.remove(bs);
      }
 
@@ -68,4 +70,5 @@ public static void main(String args[]) throws FileNotFoundException, IOException
         {
             e.printStackTrace();
         }
-}}
+}
+}

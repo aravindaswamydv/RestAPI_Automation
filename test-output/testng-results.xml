@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30" started-at="2022-02-14T19:15:45Z" finished-at="2022-02-14T19:15:45Z">
+  <suite name="Default suite" duration-ms="634" started-at="2022-02-17T17:12:37Z" finished-at="2022-02-17T17:12:37Z">
     <groups>
+      <group name="cucumber">
+        <method signature="com.qa.runners.APITestRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)" name="scenario" class="com.qa.runners.APITestRunner"/>
+        <method signature="io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group>
     </groups>
-    <test name="Default test" duration-ms="30" started-at="2022-02-14T19:15:45Z" finished-at="2022-02-14T19:15:45Z">
-      <class name="com.qa.tests.GetAPITest">
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="5" started-at="2022-02-14T19:15:45Z" finished-at="2022-02-14T19:15:45Z">
+    <test name="Default test" duration-ms="634" started-at="2022-02-17T17:12:37Z" finished-at="2022-02-17T17:12:37Z">
+      <class name="com.qa.runners.APITestRunner">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)" name="setUpClass" is-config="true" duration-ms="286" started-at="2022-02-17T17:12:37Z" finished-at="2022-02-17T17:12:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@28cda624]]>
+              </value>
+            </param>
+          </params>
         </test-method>
-        <test-method status="PASS" signature="getAPITestWithHeaders1()" name="getAPITestWithHeaders1" duration-ms="9" started-at="2022-02-14T19:15:45Z" finished-at="2022-02-14T19:15:45Z">
+        <test-method status="PASS" signature="setUpClass()" name="setUpClass" is-config="true" duration-ms="9" started-at="2022-02-17T17:12:37Z" finished-at="2022-02-17T17:12:37Z">
+        </test-method>
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)" name="scenario" duration-ms="70" started-at="2022-02-17T17:12:37Z" description="Runs Cucumber Feature" finished-at="2022-02-17T17:12:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Title of your scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Title of your feature]"]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)" name="runScenario" duration-ms="4" started-at="2022-02-17T17:12:37Z" description="Runs Cucumber Scenarios" finished-at="2022-02-17T17:12:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Title of your scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Title of your feature]"]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="tearDownClass()" name="tearDownClass" is-config="true" duration-ms="255" started-at="2022-02-17T17:12:37Z" finished-at="2022-02-17T17:12:37Z">
         </test-method>
       </class>
     </test>

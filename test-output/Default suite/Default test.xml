@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="ELW4561" name="com.qa.tests.GetAPITest" tests="1" failures="0" timestamp="14 Feb 2022 13:45:45 GMT" time="0.03" errors="0">
-  <testcase name="getAPITestWithHeaders1" time="0.009" classname="com.qa.tests.GetAPITest"/>
+<testsuite hostname="ELW4561" name="com.qa.runners.APITestRunner" tests="2" failures="0" timestamp="17 Feb 2022 11:42:37 GMT" time="0.634" errors="0">
+  <testcase name="scenario" time="0.07" classname="com.qa.runners.APITestRunner"/>
+  <testcase name="runScenario" time="0.004" classname="com.qa.runners.APITestRunner"/>
 </testsuite>
